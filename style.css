@@ -263,7 +263,6 @@ nav {
     overflow: hidden;
 }
 
-/* 👇 NEW: profile picture inside the avatar ring */
 .avatar-inner img {
     width: 100%;
     height: 100%;
@@ -366,7 +365,7 @@ nav {
 }
 
 /* ============================================================
-   ACHIEVEMENTS  (NEW)
+   ACHIEVEMENTS
    ============================================================ */
 .achievements-grid {
     display: grid;
@@ -456,6 +455,133 @@ nav {
     color: var(--text-muted);
     line-height: 1.5;
     margin: 0;
+}
+
+/* ============================================================
+   CERTIFICATES  (NEW)
+   ============================================================ */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+}
+
+.certificate-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 1.5rem;
+    padding: 2.5rem 1.8rem 1.8rem;
+    text-align: center;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.certificate-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), #a855f7);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.certificate-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(33, 23, 235, 0.18);
+}
+
+.certificate-card:hover::after {
+    transform: scaleX(1);
+}
+
+.certificate-badge {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), #a855f7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 8px 25px var(--primary-glow);
+    transition: var(--transition);
+}
+
+.certificate-card:hover .certificate-badge {
+    transform: translateX(-50%) rotate(-10deg) scale(1.1);
+}
+
+.certificate-body {
+    margin-top: 1.5rem;
+}
+
+.certificate-year {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--primary);
+    background: rgba(33, 23, 235, 0.12);
+    padding: 0.2rem 0.7rem;
+    border-radius: 30px;
+    margin-bottom: 0.8rem;
+}
+
+.certificate-body h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+}
+
+.certificate-issuer {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.certificate-body > p:not(.certificate-issuer) {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 1.3rem;
+}
+
+.certificate-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    border: 1.5px solid var(--primary);
+    border-radius: 40px;
+    transition: var(--transition);
+}
+
+.certificate-link:hover {
+    background: var(--primary);
+    color: white;
+    gap: 0.8rem;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--primary-glow);
 }
 
 /* ============================================================

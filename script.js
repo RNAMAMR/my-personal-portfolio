@@ -19,7 +19,6 @@
         }
     });
 
-    // Close menu when a nav link is clicked
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('open');
@@ -77,7 +76,7 @@
     revealElements.forEach(el => observer.observe(el));
 
     /* ============================================================
-       SMOOTH SCROLL FOR ANCHOR LINKS (fallback)
+       SMOOTH SCROLL FOR ANCHOR LINKS
        ============================================================ */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -95,7 +94,7 @@
     });
 
     /* ============================================================
-       TYPING EFFECT (subtle enhancement)
+       TYPING EFFECT
        ============================================================ */
     const greeting = document.querySelector('.greeting');
     if (greeting) {
